@@ -8,6 +8,13 @@ SharedFields:
   Hint: __Originator
   Value: "{89F92411-6F78-42D7-A789-5066D7092839}"
 Languages:
+- Language: "de-DE"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "3f8a06cc-8260-475f-ae99-0cdbf17bae23"
 - Language: en
   Versions:
   - Version: 1

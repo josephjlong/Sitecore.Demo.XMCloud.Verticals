@@ -30,6 +30,13 @@ SharedFields:
   Hint: __Originator
   Value: "{EDB00EAA-5ACA-4C4D-8B88-3195D992F980}"
 Languages:
+- Language: "de-DE"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "c0cd4fc3-1015-414f-8f0e-c95727d48a91"
 - Language: en
   Versions:
   - Version: 1
@@ -39,11 +46,11 @@ Languages:
       Value: <r />
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "77f2797b-3c16-455f-9eb0-91b07f5b7ccb"
+      Value: "d7c11a55-ee8f-489a-9e64-3934cf335282"
 - Language: "fr-CA"
   Versions:
   - Version: 1
     Fields:
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "987ed23d-dbd3-49a9-955d-5e722fd71040"
+      Value: "6c624102-43dd-461e-adc2-bc0ad74ea826"

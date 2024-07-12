@@ -16,6 +16,19 @@ SharedFields:
   Hint: __Originator
   Value: "{321B71A6-169C-4A12-905A-0BF5F5CCD7E3}"
 Languages:
+- Language: "de-DE"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "3351af3f-868e-47fc-b5c3-ad0446981faf"
+      Hint: Title
+      Value: "Es gibt nur eine perfekte Zukunft - Ihre"
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "90bbc1b1-d9cc-4c72-af3d-5ee144f7fe88"
+    - ID: "ad84ce04-c8f0-485e-bf12-9b321c6ff2fb"
+      Hint: Text
+      Value: <p>Beginnen Sie online und greifen Sie auf unser Paket personalisierter Finanzdienstleistungen zu.</p>
 - Language: en
   Versions:
   - Version: 1

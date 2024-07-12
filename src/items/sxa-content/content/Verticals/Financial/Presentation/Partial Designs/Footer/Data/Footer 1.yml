@@ -9,6 +9,13 @@ SharedFields:
   Value: |
     <image mediaid="{1FC53620-6DA2-4341-98FD-4782C564070C}" alt="PLAY! Finance" height="" width="" hspace="" vspace="" />
 Languages:
+- Language: "de-DE"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "8e35bf91-3b8d-4657-99e0-3b43f1b1f69a"
 - Language: en
   Versions:
   - Version: 1
