@@ -3,9 +3,9 @@
   "href": "https://api-us.boxever.com/v3/flowDefinitions/4daa8aa6-05ba-43b1-b4d9-275683c1a103",
   "ref": "4daa8aa6-05ba-43b1-b4d9-275683c1a103",
   "name": "embedded_{scope}_b2a38fb82e854d58afe5c12beccbee3a_en",
-  "modifiedByRef": "UsQ4dFnLMklHuDXU8acKstHeXEC65tgU@clients",
-  "modifiedAt": "2024-10-21T06:54:57.035Z",
-  "revision": 18,
+  "modifiedByRef": "auth0|636e672062f50b0585a2a2bb",
+  "modifiedAt": "2024-11-01T13:27:15.214Z",
+  "revision": 22,
   "archived": false,
   "friendlyId": "embedded_{scope}_b2a38fb82e854d58afe5c12beccbee3a_en",
   "type": "INTERACTIVE_API_FLOW",
@@ -20,7 +20,7 @@
   "traffic": {
     "type": "audienceTraffic",
     "weightingAlgorithm": "USER_DEFINED",
-    "modifiedAt": "2024-10-21T06:54:57.167Z",
+    "modifiedAt": "2024-11-01T13:27:15.363Z",
     "splits": [
       {
         "template": "{\"variantId\": \"5e9637fd02a84b21b5f46c1466e26e17\"}",
@@ -113,21 +113,40 @@
             ]
           }
         ]
+      },
+      {
+        "template": "{\"variantId\": \"398615812d34477ea04f50abbff72d34\"}",
+        "variantName": "Test",
+        "audienceName": "Test",
+        "conditionGroups": [
+          {
+            "conditions": [
+              {
+                "templateId": "organization_time_of_day",
+                "params": {
+                  "is": "is",
+                  "before or after": "before",
+                  "time": "12:20"
+                }
+              }
+            ]
+          }
+        ]
       }
     ]
   },
   "variants": [],
   "transpiledVariants": [
     {
-      "ref": "ae638c3d-0dc3-4a07-9767-33c33027ef62",
-      "name": "Business Page View",
+      "ref": "eca7b195-0cda-486a-8cc0-7657983b20cf",
+      "name": "Test",
       "tasks": [
         {
           "implementation": "templateRenderTask",
           "input": {
             "inputType": "templateRenderTaskInput",
             "type": "application/json",
-            "template": "{\"variantId\": \"c1a0eeadfde348ba8d485b52326c84ea\"}"
+            "template": "{\"variantId\": \"398615812d34477ea04f50abbff72d34\"}"
           }
         },
         {
@@ -140,7 +159,7 @@
                 "name": "Combined condition groups",
                 "description": "Combined templates within condition group for targeted experience",
                 "ruleData": {
-                  "expression": "(function () {\n    var visited = \"has\";\n    var pageName = \"business\";\n    var pageValues = pageName.split(',');\n    var expectedType = \"WEB\";\n    var expectedStatus = \"OPEN\";\n    var pageMatch = false;\n\n    if (guest && guest.sessions && guest.sessions.length > 0) {\n        loop:\n        for (var i = 0; i < guest.sessions.length; i++) {\n            if (guest.sessions[i]) {\n                if (\n                    guest.sessions[i].sessionType !== expectedType\n                    || guest.sessions[i].status !== expectedStatus\n                ) {\n                    continue loop;\n                } else if (\n                    guest.sessions[i].events\n                ) {\n                    for (var j = 0; j < guest.sessions[i].events.length; j++) {\n                        if (guest.sessions[i].events[j].arbitraryData) {\n                            if (guest.sessions[i].events[j].arbitraryData.page) {\n                                var viewedpage = guest.sessions[i].events[j].arbitraryData.page;\n                                for (var k = 0; k < pageValues.length; k++) {   \n                                    if (viewedpage === pageValues[k]) { \n                                        pageMatch = true;   \n                                        break loop; \n                                    }   \n                                }\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    }\n    \n    return (visited === \"has\") && pageMatch || (visited === \"has not\") && !pageMatch;\n})();"
+                  "expression": "(function () {\r\n    load(\"classpath:moment.js\");\r\n    load(\"classpath:moment-timezone.js\");\r\n    var returnValue = false;\r\n    var comparison = false;\r\n    var comparator = \"is\";\r\n    var operatorValue = \"before\";\r\n    var time = \"12:20\";\r\n    var tenantTimezone = \"\";\r\n\r\n    if (tenant && tenant.configurations && tenant.configurations.timeZone) {\r\n        tenantTimezone = tenant.configurations.timeZone;\r\n    }\r\n    var tenantTime = moment.tz(tenantTimezone).format('HH:mm');\r\n    \r\n    if (operatorValue === 'before') {\r\n        comparison = tenantTime <= time;\r\n    } else if (operatorValue === 'after') {\r\n        comparison = tenantTime >= time;\r\n    }\r\n        \r\n    if (comparator === \"is\") {\r\n        returnValue = comparison;\r\n    } else {\r\n        returnValue = !comparison;\r\n    }\r\n    return returnValue;\r\n})();"
                 }
               }
             ]
